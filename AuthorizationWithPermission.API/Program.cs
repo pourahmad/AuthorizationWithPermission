@@ -1,6 +1,7 @@
 using AuthenticationSample.Services;
 using AuthorizationWithPermission.API.Data;
 using AuthorizationWithPermission.API.Helpers;
+using AuthorizationWithPermission.API.Models;
 using AuthorizationWithPermission.API.Services;
 using AuthorizationWithPermission.Services;
 using Microsoft.AspNetCore.Identity;
@@ -15,7 +16,8 @@ builder.Services.AddDbContext<AuthDbContext>(options =>
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
     .AddEntityFrameworkStores<AuthDbContext>()
-    .AddClaimsPrincipalFactory<AuthUserClaimsPrincipalFactory>();
+    .AddClaimsPrincipalFactory<AuthUserClaimsPrincipalFactory>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<UserClaimsPrincipalFactory<IdentityUser>, AuthUserClaimsPrincipalFactory>();
 
@@ -23,9 +25,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings:JwtOptions"));
+
 builder.Services.AddScoped<IPermissionsService, PermissionsService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+
+builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
 

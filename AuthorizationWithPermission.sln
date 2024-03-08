@@ -4,8 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationWithPermission", "AuthorizationWithPermission\AuthorizationWithPermission.csproj", "{E71CE6E4-C226-4CDA-8F52-06D7735C4707}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07} = {8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationWithPermission.API", "AuthorizationWithPermission.API\AuthorizationWithPermission.API.csproj", "{8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorizationWithPermission.MVC", "AuthorizationWithPermission.MVC\AuthorizationWithPermission.MVC.csproj", "{EEA5F32B-CD52-4DD9-ACE5-8E89FABE967E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,10 @@ Global
 		{8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B2E3E06-92DA-45F1-AE7B-D9BB2E26EC07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEA5F32B-CD52-4DD9-ACE5-8E89FABE967E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEA5F32B-CD52-4DD9-ACE5-8E89FABE967E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEA5F32B-CD52-4DD9-ACE5-8E89FABE967E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEA5F32B-CD52-4DD9-ACE5-8E89FABE967E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

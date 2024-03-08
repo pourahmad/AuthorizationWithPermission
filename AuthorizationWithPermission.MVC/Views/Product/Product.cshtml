@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AuthorizationWithPermission.MVC.Models.Product.ProductVm>
+<div>
+    <table>
+        <thead>
+        <tr>
+            <th> Id </th>
+            <th> Name </th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
